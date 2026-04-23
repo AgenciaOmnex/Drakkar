@@ -11,6 +11,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="assets/img/logo.webp" />
+  <link rel="apple-touch-icon" href="assets/img/logo.webp" />
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://drakkarbox.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drakkarbox.com/" />
+  <meta property="og:title" content="Drakkar Box | Cross-Training · Hybrid · Huelva" />
+  <meta property="og:description" content="Drakkar Box – Centro de Cross-Training e Hybrid en Huelva. Forging Fitness. Clases para todos los niveles, entrenadores certificados." />
+  <meta property="og:image" content="https://drakkarbox.com/assets/img/og%20image.jpg" />
 </head>
 
 <body>
@@ -103,7 +117,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
 
         <div class="trainer-slide">
           <div class="trainer-photo">
-            <video src="assets/img/videoprueba.mp4" muted playsinline preload="auto"></video>
+            <video src="assets/img/videoprueba.mp4" muted playsinline preload="none"></video>
           </div>
           <div class="trainer-info">
             <span class="trainer-name">Lolo</span>
@@ -113,7 +127,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
 
         <div class="trainer-slide">
           <div class="trainer-photo">
-            <video src="assets/img/videoriki.mp4" muted playsinline preload="auto"></video>
+            <video src="assets/img/videoriki.mp4" muted playsinline preload="none"></video>
           </div>
           <div class="trainer-info">
             <span class="trainer-name">Riki</span>
@@ -123,7 +137,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
 
         <div class="trainer-slide">
           <div class="trainer-photo">
-            <video src="assets/img/videoblas.mp4" muted playsinline preload="auto"></video>
+            <video src="assets/img/videoblas.mp4" muted playsinline preload="none"></video>
           </div>
           <div class="trainer-info">
             <span class="trainer-name">Blas</span>
@@ -208,7 +222,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
           </div>
         </div>
 
-        <div class="activity-card fade-in" style="transition-delay:0.1s">
+        <div class="activity-card card-secondary card-app fade-in" style="transition-delay:0.1s">
           <div class="activity-card-inner">
             <div class="act-header">
               <div class="activity-icon"><span class="icon icon-lg"><img src="assets/img/logowod.webp" alt="WodBuster" style="width:40px;height:40px;object-fit:contain" /></span></div>
@@ -216,12 +230,12 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
             </div>
             <div class="act-body">
               <p class="activity-desc">Reserva tu plaza en cualquier clase directamente desde la app de Wodbuster. Fácil, rápido y sin llamadas.<br><br>Recuerda: las clases se abren el día anterior a las 22:30. Así que estate atento y asegura tu sitio.</p>
-              <a href="https://wodbuster.com/account/login.aspx?ReturnUrl=%2Faccount%2Froadtobox.aspx" target="_blank" rel="noopener noreferrer" class="activity-tag">Abrir App →</a>
+              <a href="https://wodbuster.com/account/login.aspx?ReturnUrl=%2Faccount%2Froadtobox.aspx" target="_blank" rel="noopener noreferrer" class="activity-tag">Abrir App</a>
             </div>
           </div>
         </div>
 
-        <div class="activity-card fade-in" style="transition-delay:0.2s">
+        <div class="activity-card card-secondary card-instagram fade-in" style="transition-delay:0.2s">
           <div class="activity-card-inner">
             <div class="act-header">
               <div class="activity-icon"><span class="icon icon-lg"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span></div>
@@ -229,7 +243,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
             </div>
             <div class="act-body">
               <p class="activity-desc">En nuestro Instagram te enseñamos el día a día: los entrenamientos que sudamos, las risas que nos echamos y cómo la comunidad empuja más que cualquier barra.<br><br>Porque aquí nadie viene a pasar desapercibido. Aquí venimos a crecer, a romper límites y a celebrarlo juntos.<br><br>Entra, mira y únete. Te esperamos en</p>
-              <a href="https://www.instagram.com/drakkar_box/" target="_blank" rel="noopener noreferrer" class="activity-tag">@drakkar_box →</a>
+              <a href="https://www.instagram.com/drakkar_box/" target="_blank" rel="noopener noreferrer" class="activity-tag">@drakkar_box</a>
             </div>
           </div>
         </div>
@@ -459,6 +473,13 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
               <textarea id="su-enfermedad" name="enfermedad" placeholder="Ej: diabetes, epilepsia, hipertensión... Escribe 'No' si no tienes ninguna."></textarea>
             </div>
 
+            <div class="su-form-group su-rgpd-group su-field-anim" style="transition-delay:.49s">
+              <label class="su-rgpd-label">
+                <input type="checkbox" id="su-rgpd" name="rgpd" required />
+                He leído y acepto la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>. Consiento expresamente el tratamiento de mis datos de salud (lesiones y enfermedades) para la prestación del servicio de entrenamiento, conforme al Art. 9.2.a RGPD.
+              </label>
+            </div>
+
             <button type="submit" class="btn-signup-submit" id="suSubmitBtn" disabled>
               Enviar inscripción
             </button>
@@ -524,12 +545,22 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
 
       <div class="fac-naves fade-in">
         <div class="fac-nave">
-          <p class="fac-nave-label">Nave 1.0</p>
-          <p>Corazón del box: clases, Open Box, oficina y vestuarios completos con duchas.</p>
+          <button class="fac-nave-toggle" aria-expanded="false">
+            <span class="fac-nave-label">Nave 1.0</span>
+            <span class="fac-nave-arrow">›</span>
+          </button>
+          <div class="fac-nave-body">
+            <p>Corazón del box: clases, Open Box, oficina y vestuarios completos con duchas.</p>
+          </div>
         </div>
         <div class="fac-nave">
-          <p class="fac-nave-label">Nave 2.0</p>
-          <p>Zona ampliada con clases, Open y espacio específico de Open Lift para trabajo técnico y halterofilia.</p>
+          <button class="fac-nave-toggle" aria-expanded="false">
+            <span class="fac-nave-label">Nave 2.0</span>
+            <span class="fac-nave-arrow">›</span>
+          </button>
+          <div class="fac-nave-body">
+            <p>Zona ampliada con clases, Open y espacio específico de Open Lift para trabajo técnico y halterofilia.</p>
+          </div>
         </div>
       </div>
 
@@ -609,7 +640,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
           </div>
         </div>
         <div class="map-panel fade-in" style="transition-delay:0.2s">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.9!2d-6.9499!3d37.2516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Gravera+8+Huelva!5e0!3m2!1ses!2ses!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Drakkar Box ubicación en Google Maps"></iframe>
+          <iframe src="https://maps.google.com/maps?q=37.2596625,-6.9222549&output=embed&hl=es&z=17" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Drakkar Box ubicación en Google Maps"></iframe>
         </div>
       </div>
     </div>
@@ -660,7 +691,7 @@ Aquí no solo vienes a entrenar: formas parte de una comunidad.
   <footer>
     <div class="footer-bottom">
       <div class="footer-bottom-row">
-        <p>© 2025 <span class="footer-brand-name">Drakkar Box</span> · Todos los derechos reservados · Huelva</p>
+        <p>© 2026 <span class="footer-brand-name">Drakkar Box</span> · Todos los derechos reservados · Huelva</p>
         <div class="footer-bottom-links">
           <a href="politica-privacidad.html">Política de Privacidad</a>
           <a href="aviso-legal.html">Aviso Legal</a>

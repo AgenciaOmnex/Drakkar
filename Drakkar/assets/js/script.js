@@ -540,22 +540,22 @@ document.querySelectorAll('.trainer-photo video').forEach(vid => {
 (function () {
   const cta = document.getElementById('signup');
   if (!cta) return;
-  let pos = 0, vel = 0, targetVel = 0;
-  const TARGET_VEL = 0.08;
-  const isTouch = window.matchMedia('(hover: none)').matches;
+  let pos = 0, vel = 0;
+  const TARGET_VEL = 0.05;
+  let rafId = null;
   function step() {
-    vel += (targetVel - vel) * 0.04;
+    vel += (TARGET_VEL - vel) * 0.03;
     pos += vel;
     cta.style.setProperty('--cascade-y', pos + 'px');
-    requestAnimationFrame(step);
+    rafId = requestAnimationFrame(step);
   }
-  if (isTouch) {
-    targetVel = TARGET_VEL;
-  } else {
-    cta.addEventListener('mouseenter', () => { targetVel = TARGET_VEL; });
-    cta.addEventListener('mouseleave', () => { targetVel = 0; });
-  }
-  requestAnimationFrame(step);
+  new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      if (!rafId) rafId = requestAnimationFrame(step);
+    } else {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+  }, { threshold: 0 }).observe(cta);
 })();
 
 
@@ -567,6 +567,7 @@ document.querySelectorAll('.trainer-photo video').forEach(vid => {
   let curX = 50, curY = 50;
   let hovered = false;
   let t = 0;
+  let rafId = null;
 
   function lerp(a, b, f) { return a + (b - a) * f; }
 
@@ -583,7 +584,7 @@ document.querySelectorAll('.trainer-photo video').forEach(vid => {
     }
     box.style.setProperty('--shine-x', curX.toFixed(2) + '%');
     box.style.setProperty('--shine-y', curY.toFixed(2) + '%');
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
   }
 
   box.addEventListener('mouseenter', () => { hovered = true; });
@@ -594,7 +595,13 @@ document.querySelectorAll('.trainer-photo video').forEach(vid => {
   });
   box.addEventListener('mouseleave', () => { hovered = false; });
 
-  tick();
+  new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    } else {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }
+  }, { threshold: 0 }).observe(box);
 })();
 
 
@@ -662,6 +669,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   if (!form) return;
 
+  const rgpdCheck = document.getElementById('su-rgpd');
+
   const fields = [
     document.getElementById('su-nombre'),
     document.getElementById('su-apellidos'),
@@ -686,7 +695,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       else             f.classList.remove('su-filled');
     });
 
-    const allFilled = filledCount === fields.length;
+    const allFilled = filledCount === fields.length && rgpdCheck && rgpdCheck.checked;
 
     submitBtn.disabled = !allFilled;
     if (allFilled) submitBtn.classList.add('su-ready');
@@ -714,9 +723,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     f.addEventListener('change', updateProgress);
   });
 
+  if (rgpdCheck) rgpdCheck.addEventListener('change', updateProgress);
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!fields.every(isFilled)) return;
+    if (!fields.every(isFilled) || !rgpdCheck || !rgpdCheck.checked) return;
 
     submitBtn.classList.add('su-sending');
     submitBtn.textContent = 'Enviando…';
@@ -872,7 +883,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   const logoImg = document.createElement('img');
   logoImg.src = 'assets/img/logo.webp';
   logoImg.className = 'rune-circle-logo';
-  if (isDesktop) { logoImg.style.width = '56px'; logoImg.style.height = '56px'; }
+  if (isDesktop) { logoImg.style.width = '62px'; logoImg.style.height = '62px'; }
   runeCircle.appendChild(logoImg);
 
   document.body.appendChild(runeCircle);
@@ -915,7 +926,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   setTimeout(function () {
     if (!dismissed) callout.classList.add('dk-callout-visible');
-  }, 3000);
+  }, 9000);
 
   callout.addEventListener('click', function (e) {
     if (e.target === closeBtn) return;
@@ -1167,7 +1178,7 @@ document.querySelectorAll('[data-action="free-class"]').forEach(btn => {
   if (!logoCenter || !runeDiv || !heroBottom || !hero || !logoMain || !logoWord) return;
 
   const MW = 20; // margen lateral
-  const MH = 10; // margen vertical interior
+  const MH = 28; // margen vertical interior (incluye separación con hero-bottom)
   const GAP = 14; // separación entre símbolo y palabra
 
   var rafId = null;
@@ -1259,7 +1270,7 @@ document.querySelectorAll('[data-action="free-class"]').forEach(btn => {
   function clampFloating() {
     const gap = window.innerHeight - footer.getBoundingClientRect().top;
     if (gap > 0) {
-      const b = Math.max(24, gap + 12);
+      const b = Math.max(14, gap + 12);
       btn.style.bottom                     = b + 'px';
       if (callout)  callout.style.bottom   = (b + 64) + 'px';
       if (runeCirc) runeCirc.style.bottom  = b + 'px';
@@ -1290,3 +1301,36 @@ if (chatInput) {
     if (e.key === 'Enter') window.dkSend();
   });
 }
+
+
+// ── Nave accordion (C7) ───────────────────────────
+(function () {
+  document.querySelectorAll('.fac-nave-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var body = btn.nextElementSibling;
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      body.classList.toggle('fac-nave-open', !isOpen);
+    });
+  });
+})();
+
+
+// ── Lightbox swipe (C9) ───────────────────────────
+(function () {
+  var lb = document.getElementById('fac-lightbox');
+  if (!lb) return;
+  var lbTouchX = 0;
+  lb.addEventListener('touchstart', function (e) {
+    lbTouchX = e.touches[0].clientX;
+  }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (!lb.classList.contains('active')) return;
+    var dx = e.changedTouches[0].clientX - lbTouchX;
+    if (Math.abs(dx) < 40) return;
+    var flbPrev = document.getElementById('flb-prev');
+    var flbNext = document.getElementById('flb-next');
+    if (dx < 0 && flbNext) flbNext.click();
+    else if (dx > 0 && flbPrev) flbPrev.click();
+  }, { passive: true });
+})();
