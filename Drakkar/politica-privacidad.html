@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad | Drakkar Box</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://drakkarbox.com/politica-privacidad.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/legal.css" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html">← Volver a Drakkar Box</a>
+  </header>
+
+  <main>
+    <h1>Política de <span>Privacidad</span></h1>
+    <p class="meta">Última actualización: abril de 2025</p>
+
+    <h2>1. Responsable del tratamiento</h2>
+    <p>
+      <strong>Denominación social:</strong> Drakkar<br>
+      <strong>NIF:</strong> E56984453<br>
+      <strong>Domicilio:</strong> C/ Gravera, Nº 8, Puerta 7 — Nave Marismas Polvorín, 21007 Huelva (Huelva)<br>
+      <strong>Correo electrónico:</strong> <a href="mailto:drakkarbox.dk@gmail.com">drakkarbox.dk@gmail.com</a>
+    </p>
+
+    <h2>2. Datos que recogemos</h2>
+    <p>El sitio web <strong>drakkarbox.com</strong> recoge datos personales a través de los siguientes canales:</p>
+
+    <h3>Formulario de inscripción</h3>
+    <p>Al cumplimentar el formulario de inscripción se recogen los siguientes datos:</p>
+    <ul>
+      <li><strong>Datos identificativos:</strong> nombre, apellidos, correo electrónico y teléfono.</li>
+      <li><strong>Datos relativos al servicio:</strong> tarifa elegida y fecha de solicitud.</li>
+      <li><strong>Datos de salud (categoría especial):</strong> lesiones y enfermedades declaradas voluntariamente por el usuario, con la única finalidad de adaptar el entrenamiento a sus condiciones físicas.</li>
+    </ul>
+    <p>Estos datos se transmiten a través de un servidor intermediario propio a <strong>Google Apps Script</strong> (un servicio de Google LLC) y se almacenan en una hoja de cálculo de Google Sheets gestionada por Drakkar.</p>
+
+    <h3>Chatbot</h3>
+    <p>A través del chatbot integrado en el Sitio, el usuario puede enviar mensajes de texto libremente. El sistema no solicita nombre, correo electrónico ni teléfono; no obstante, el usuario podría incluir datos personales voluntariamente en el contenido de los mensajes. Junto al texto del mensaje se envía un identificador de sesión técnico y anónimo generado automáticamente en el dispositivo del usuario, así como las últimas intervenciones del chat activo. Este identificador no está asociado a ningún dato identificativo.</p>
+    <p>Los mensajes se transmiten a través de un servidor intermediario al servicio de automatización <strong>n8n</strong>, que genera la respuesta automática.</p>
+
+    <h3>Contacto directo</h3>
+    <p>Si el usuario contacta mediante el botón de WhatsApp o el correo electrónico indicado, los datos facilitados (nombre, número de teléfono o mensaje) se tratan únicamente para atender su consulta y no se incorporan a ningún sistema automatizado del Sitio.</p>
+
+    <h2>3. Finalidad y base legal del tratamiento</h2>
+    <ul>
+      <li><strong>Gestión de la inscripción:</strong> tramitar la solicitud de alta y comunicar la tarifa correspondiente. Base legal: ejecución de una relación precontractual a petición del interesado (art. 6.1.b RGPD).</li>
+      <li><strong>Adaptación del entrenamiento:</strong> tratamiento de los datos de salud facilitados en el formulario (lesiones y enfermedades) con la única finalidad de personalizar el servicio de entrenamiento. Base legal: consentimiento explícito del interesado (art. 9.2.a RGPD).</li>
+      <li><strong>Atención de consultas vía chatbot:</strong> procesar los mensajes enviados a través del chat para ofrecer respuestas automáticas sobre el servicio. Base legal: interés legítimo del responsable (art. 6.1.f RGPD).</li>
+      <li><strong>Atención de consultas directas:</strong> gestionar las preguntas o solicitudes enviadas por WhatsApp o correo electrónico. Base legal: interés legítimo del responsable (art. 6.1.f RGPD).</li>
+    </ul>
+
+    <h2>4. Conservación de los datos</h2>
+    <p>Los datos del formulario de inscripción se conservarán durante el tiempo en que el usuario mantenga su relación con Drakkar y, una vez finalizada, durante los plazos legales que resulten de aplicación.</p>
+    <p>Los datos de salud se conservan mientras sean necesarios para la prestación del servicio y se eliminan a petición del interesado o cuando dejen de tener relevancia para el entrenamiento.</p>
+    <p>Los mensajes del chatbot no se almacenan en el Sitio. El historial de la conversación se guarda exclusivamente en el dispositivo del usuario durante la sesión activa del navegador y se elimina al cerrar el navegador. La instancia n8n utilizada es autohospedada: por defecto almacena los datos de ejecución de los flujos (incluyendo el contenido de los mensajes) en su base de datos de forma indefinida, salvo que se configure explícitamente un límite de retención mediante la variable de entorno <code>EXECUTIONS_DATA_MAX_AGE</code>. <!-- Pendiente técnico: configurar EXECUTIONS_DATA_MAX_AGE en la instancia n8n para limitar la retención de logs (recomendado: 7-30 días). --></p>
+
+    <h2>5. Destinatarios y encargados del tratamiento</h2>
+    <p>Los datos personales pueden ser tratados por los siguientes terceros en calidad de encargados del tratamiento:</p>
+    <ul>
+      <li>
+        <strong>Google LLC</strong> — Los datos del formulario de inscripción (incluidos los datos de salud) se transmiten a través de un servidor intermediario propio al servicio Google Apps Script y se almacenan en Google Sheets gestionada por Drakkar. El usuario no envía datos directamente a Google desde su navegador; la comunicación se realiza de servidor a servidor. Adicionalmente, el Sitio carga tipografías desde Google Fonts e incorpora un mapa de Google Maps, lo que implica que Google puede procesar la dirección IP del usuario al cargar dichos recursos. Google LLC tiene su sede en Estados Unidos; las transferencias se rigen por los Términos de Servicio y la Política de Privacidad de Google.
+      </li>
+      <li>
+        <strong>n8n / easypanel.host</strong> (plataforma de automatización) — Los mensajes enviados a través del chatbot se transmiten a través de un servidor intermediario al servicio n8n para generar respuestas automáticas. El chatbot no solicita datos identificativos, aunque el usuario podría incluirlos voluntariamente en el texto de los mensajes. El servidor n8n está alojado en Fráncfort (Alemania, UE) por Hostinger International Limited, por lo que no aplican transferencias internacionales de datos a este servicio.
+      </li>
+    </ul>
+    <p>No se ceden datos personales a terceros con fines comerciales ni publicitarios.</p>
+
+    <h2>6. Derechos del usuario</h2>
+    <p>El usuario puede ejercer en cualquier momento los siguientes derechos reconocidos por el RGPD y la LOPDGDD:</p>
+    <ul>
+      <li><strong>Acceso:</strong> conocer qué datos suyos tratamos.</li>
+      <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
+      <li><strong>Supresión:</strong> solicitar la eliminación de sus datos.</li>
+      <li><strong>Oposición y limitación:</strong> oponerse al tratamiento o solicitar su limitación.</li>
+      <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado.</li>
+      <li><strong>Retirada del consentimiento:</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.</li>
+    </ul>
+    <p>Para ejercer estos derechos, envíe un correo a <a href="mailto:drakkarbox.dk@gmail.com">drakkarbox.dk@gmail.com</a> indicando el derecho que desea ejercer y adjuntando copia de su DNI o documento identificativo.</p>
+    <p>Si considera que el tratamiento no se ajusta a la normativa, puede presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+
+    <h2>7. Cookies y almacenamiento local</h2>
+    <p>El Sitio utiliza cookies técnicas propias. No se emplean cookies de seguimiento, publicidad ni analítica de terceros. Consulte nuestra <a href="politica-cookies.html">Política de Cookies</a> para más información.</p>
+
+    <h2>8. Cambios en esta política</h2>
+    <p>Drakkar se reserva el derecho a modificar esta Política de Privacidad para adaptarla a cambios normativos o del Sitio. Se notificará cualquier modificación relevante en esta misma página.</p>
+  </main>
+
+  <footer>
+    <p>© 2026 Drakkar Box · Huelva</p>
+    <p>
+      <a href="aviso-legal.html">Aviso Legal</a>
+      <a href="politica-cookies.html">Política de Cookies</a>
+      <a href="index.html">Inicio</a>
+    </p>
+  </footer>
+
+  <script src="assets/js/legal.js" defer></script>
+</body>
+</html>
