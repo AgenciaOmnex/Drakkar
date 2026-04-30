@@ -596,7 +596,7 @@ document.querySelectorAll('.trainer-photo video').forEach(vid => {
   const cta = document.getElementById('signup');
   if (!cta) return;
   let pos = 0, vel = 0;
-  const TARGET_VEL = 0.40;
+  const TARGET_VEL = 0.16;
   let rafId = null;
   function step() {
     vel += (TARGET_VEL - vel) * 0.03;
@@ -1336,15 +1336,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
   function toggleActivity(card) {
     var isOpen = card.classList.contains('act-open');
-    document.querySelectorAll('.activity-card:not(.featured)').forEach(function (c) {
-      c.classList.remove('act-open');
-      var h = c.querySelector('.act-header');
-      if (h) h.setAttribute('aria-expanded', 'false');
-    });
+    var isSecondary = card.classList.contains('card-secondary');
+
+    if (!isSecondary) {
+      document.querySelectorAll('.activity-card:not(.featured):not(.card-secondary)').forEach(function (c) {
+        c.classList.remove('act-open');
+        var h = c.querySelector('.act-header');
+        if (h) h.setAttribute('aria-expanded', 'false');
+      });
+    }
+
     if (!isOpen) {
       card.classList.add('act-open');
       var h = card.querySelector('.act-header');
       if (h) h.setAttribute('aria-expanded', 'true');
+    } else {
+      card.classList.remove('act-open');
+      var h = card.querySelector('.act-header');
+      if (h) h.setAttribute('aria-expanded', 'false');
     }
   }
 

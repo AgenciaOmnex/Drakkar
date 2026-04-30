@@ -84,7 +84,7 @@ h3 {
   margin: 24px 0 8px;
 }
 
-p { margin-bottom: 14px; color: rgba(245,245,240,0.85); }
+p { margin-bottom: 14px; color: rgba(245,245,240,0.85); text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 a { color: var(--gold); }
 
 ul { margin: 0 0 14px 20px; color: rgba(245,245,240,0.85); }
@@ -132,4 +132,5 @@ footer {
   color: var(--gray-2);
 }
 footer a { color: var(--gold); margin: 0 8px; }
+footer p { text-align: center; }
 footer p + p { margin-top: 8px; }

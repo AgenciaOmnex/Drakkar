@@ -312,7 +312,7 @@ ul { list-style: none; }
 
 .hero-disciplines {
   display: block;
-  font-size: clamp(32px, 1.5vw, 72px);
+  font-size: clamp(32px, 3.5vw, 56px);
   font-weight: 800;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -355,7 +355,7 @@ ul { list-style: none; }
 }
 .hero-brand-sub {
   display: block;
-  font-size: clamp(15px, 1.9vw, 24px);
+  font-size: clamp(16px, 2vw, 26px);
   font-weight: 700;
   letter-spacing: 6px;
   text-transform: uppercase;
@@ -463,6 +463,8 @@ ul { list-style: none; }
   line-height: 1.8;
   margin-bottom: 16px;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* ── TRAINERS SLIDER ───────────────────────── */
@@ -625,6 +627,9 @@ ul { list-style: none; }
 .activity-desc {
   font-size: 14px;
   color: var(--gray-2);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   line-height: 1.6;
   flex: 1;
   transition: color 0.3s;
@@ -815,7 +820,7 @@ ul { list-style: none; }
 #flb-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-family: var(--font-main); font-size: 11px; letter-spacing: 3px; color: var(--gray-3); text-transform: uppercase; margin: 0; white-space: nowrap; }
 
 .fac-intro { max-width: 740px; margin: 0 0 20px; text-align: left; }
-.fac-intro p { color: var(--gray-2); line-height: 1.8; margin-bottom: 10px; font-size: 15px; text-align: justify; }
+.fac-intro p { color: var(--gray-2); line-height: 1.8; margin-bottom: 10px; font-size: 15px; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .fac-naves { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 0; background: rgba(156,134,76,0.15); }
 .fac-nave { background: #0d0d0d; padding: 0; border-top: 2px solid var(--gold); }
 
@@ -1153,7 +1158,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(156,134,76,0.3); }
   .footer-bottom-links { justify-content: center; }
   .rune-divider { padding: 6px 16px; gap: 8px; }
   .rune-divider span { font-size: 10px; letter-spacing: 3px; }
-  .hero-disciplines { font-size: clamp(20px, 3.5vw, 32px); }
+  .hero-disciplines { font-size: clamp(22px, 3.5vw, 32px); letter-spacing: 3px; }
 
   /* Carrusel instalaciones: ocultar flechas (sobresalen 22px fuera del container) */
   .fac-nav { display: none; }
@@ -1207,45 +1212,25 @@ footer { background: var(--dark); border-top: 1px solid rgba(156,134,76,0.3); }
   }
   .activity-card.act-open .activity-highlight { text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
 
-  /* C4 — App reservas e Instagram: misma línea horizontal (accordion normal) */
-  .activities-row-2 { grid-template-columns: 1fr 1fr; }
-  .activities-row-2 .activity-card.featured { grid-column: 1 / -1; }
+  /* C4 — App reservas e Instagram: apiladas, independientes, ancho completo */
+  .activities-row-2 { grid-template-columns: 1fr; }
 
-  /* App e Instagram: icono arriba, texto centrado, sin flecha */
+  /* Secundarias: header horizontal estándar con flecha */
   .card-app .act-header,
   .card-instagram .act-header {
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    gap: 6px;
+    text-align: left;
+    gap: 12px;
+    padding-top: 16px;
   }
-  .card-app .act-header .activity-icon,
-  .card-instagram .act-header .activity-icon { margin-bottom: 0; }
   .card-app .act-header::after,
-  .card-instagram .act-header::after { display: none; }
-  /* Secundarias: centrar el act-header dentro del card-inner */
-  .card-secondary .activity-card-inner {
-    justify-content: center;
-  }
-  /* Instagram: icono absoluto arriba (misma altura que App), texto en posición anterior */
-  .card-instagram .act-header {
-    justify-content: flex-start;
-    gap: 0;
-    padding-top: 48px;
-  }
-  .card-instagram .act-header .activity-icon {
-    position: absolute;
-    top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .card-instagram .act-header .activity-name {
-    position: static;
-    transform: none;
-    text-align: center;
-    margin: 0;
-  }
+  .card-instagram .act-header::after { display: flex; }
+  .card-instagram .act-header .activity-icon { position: static; transform: none; }
+  .card-secondary .activity-card-inner { justify-content: flex-start; }
+  .card-secondary.act-open .act-body { max-height: 600px; }
+  .act-body .activity-desc { margin-bottom: 12px; }
 
   /* Carrusel de reseñas en móvil */
   .reviews-grid { height: 300px; }
@@ -1272,7 +1257,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(156,134,76,0.3); }
   .hero-buttons, .cta-btns { flex-direction: column; align-items: center; }
   .hero-bottom { padding: 16px 16px 36px; bottom: 0; }
   .hero-tagline { font-size: 18px; }
-  .hero-brand-sub { font-size: 17px; letter-spacing: 4px; }
+  .hero-disciplines { font-size: 19px; letter-spacing: 1px; }
+  .hero-brand-sub { font-size: 14px; letter-spacing: 3px; }
   .about-stats-strip { grid-template-columns: repeat(2, 1fr); }
   .stats-strip-item { padding: 28px 12px; }
   .section-container { padding: 0 16px; }
